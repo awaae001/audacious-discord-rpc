@@ -22,8 +22,7 @@ class RPCPlugin : public GeneralPlugin {
               "https://github.com/onegen-dev/audacious-discord-rpc\n"
               " © onegen <onegen@onegen.dev> (2024–2025)\n"
               " © Derzsi Dániel <daniel@tohka.us> et al. (2018–2022)\n\n"
-              "Displays the current playing track as your Discord status.\n"
-              "(Discord should be running before this plugin is loaded.)");
+              "Displays the current playing track as your Discord status.");
      static const PreferencesWidget widgets[];
      static const PluginPreferences prefs;
      static const char* const defaults[];
@@ -37,8 +36,6 @@ class RPCPlugin : public GeneralPlugin {
      void cleanup();
 };
 
-// Audacious translates plugin names and preference labels through info.domain.
-// Bind on module load, since the plugin may be listed before init() is called.
 [[maybe_unused]] static const bool locale_bound = [] {
      bindtextdomain(PLUGIN_ID, PLUGIN_LOCALE_DIR);
      bind_textdomain_codeset(PLUGIN_ID, "UTF-8");
